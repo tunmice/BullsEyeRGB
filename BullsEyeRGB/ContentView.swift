@@ -16,6 +16,7 @@ struct ContentView: View {
     @State var gGuess: Double
     @State var bGuess: Double
     @State var showAlert = false
+    @ObservedObject var timer = TimeCounter()
     func computeScore() -> Int {
       let rDiff = rGuess - rTarget
       let gDiff = gGuess - gTarget
@@ -28,37 +29,58 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            HStack {
-                VStack {
-                    Color(red: rTarget, green: gTarget, blue: bTarget)
-                       
-                    Text("Match the order")
+        NavigationView {
+            VStack {
+                HStack {
+                    VStack {
+                        Color(red: rTarget, green: gTarget, blue: bTarget)
+                           
+                        self.showAlert ? Text("R: \(Int(rTarget * 255.0))"
+                          + "  G: \(Int(gTarget * 255.0))"
+                          + "  B: \(Int(bTarget * 255.0))")
                         
+                          : Text("Match this color")
+                        
+                            
+                    }
+                    
+                    VStack {
+                        ZStack {
+                            Color(red: rGuess, green: gGuess, blue: bGuess)
+                            
+                            Text(String(timer.counter))
+                                .foregroundColor(.black)
+                              .padding(.all, 5)
+                              .background(Color.white)
+                              .mask(Circle())
+                        }
+                            
+                        Text("R: \(Int(rGuess * 255.0))"
+                          + " G: \(Int(gGuess * 255.0))"
+                          + " B: \(Int(bGuess * 255.0))")
+                            
+                    }
                 }
+               
+                VStack {
+                    ColorSlider(value: $rGuess, textColor: .red)
+                    ColorSlider(value: $bGuess, textColor: .blue)
+                    ColorSlider(value: $gGuess, textColor: .green)
+                }.padding(.horizontal)
                 
-                VStack {
-                    Color(red: rGuess, green: gGuess, blue: bGuess)
-                        
-                    Text("R: \(Int(rGuess * 255.0))"
-                      + " G: \(Int(gGuess * 255.0))"
-                      + " B: \(Int(bGuess * 255.0))")
-                        
-                }
+                Button(action: {self.showAlert = true
+                    self.timer.killTimer()
+                }) {
+                    Text("Hit me!")
+                        .foregroundColor(.red)
+                }.alert(isPresented: $showAlert) {
+                    Alert(title: Text("Your Score"),
+                          message: Text(String(computeScore())))
+                  }.padding()
+                
             }
-           
-            ColorSlider(value: $rGuess, textColor: .red)
-            ColorSlider(value: $bGuess, textColor: .blue)
-            ColorSlider(value: $gGuess, textColor: .green)
-            Button(action: {self.showAlert = true}) {
-                Text("Hit me!")
-                    .foregroundColor(.red)
-            }.alert(isPresented: $showAlert) {
-                Alert(title: Text("Your Score"),
-                      message: Text(String(computeScore())))
-              }.padding()
-            
         }
+    
 //        .padding(5)
         
        
@@ -68,11 +90,15 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(rGuess: 0.5, gGuess: 0.5, bGuess: 0.5)
+       
+          .previewLayout(.fixed(width: 568, height: 320))
+//
     }
 }
 
 struct ColorSlider: View {
     @Binding var value: Double
+//    @Binding var opacity: Double
     var textColor: Color
     var body: some View {
         
@@ -80,9 +106,11 @@ struct ColorSlider: View {
             Text("0")
                 .foregroundColor(textColor)
             Slider(value: $value)
-                
+                .background(textColor)
+                .opacity(value)
+                .cornerRadius(10)
             Text("255")
                 .foregroundColor(textColor)
-        } .padding(.horizontal)
+        }
     }
 }

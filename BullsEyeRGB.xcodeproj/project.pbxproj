@@ -16,6 +16,7 @@
 		BAC34C2E26D4759400353DD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAC34C2C26D4759400353DD6 /* LaunchScreen.storyboard */; };
 		BAC34C3926D4759500353DD6 /* BullsEyeRGBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC34C3826D4759500353DD6 /* BullsEyeRGBTests.swift */; };
 		BAC34C4426D4759500353DD6 /* BullsEyeRGBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC34C4326D4759500353DD6 /* BullsEyeRGBUITests.swift */; };
+		BAC34C9126D5CC3E00353DD6 /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC34C9026D5CC3D00353DD6 /* TimeCounter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BAC34C3F26D4759500353DD6 /* BullsEyeRGBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullsEyeRGBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC34C4326D4759500353DD6 /* BullsEyeRGBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeRGBUITests.swift; sourceTree = "<group>"; };
 		BAC34C4526D4759500353DD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAC34C9026D5CC3D00353DD6 /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				BAC34C2F26D4759400353DD6 /* Info.plist */,
 				BAC34C2426D4758D00353DD6 /* BullsEyeRGB.xcdatamodeld */,
 				BAC34C2926D4759400353DD6 /* Preview Content */,
+				BAC34C9026D5CC3D00353DD6 /* TimeCounter.swift */,
 			);
 			path = BullsEyeRGB;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				BAC34C2626D4758D00353DD6 /* BullsEyeRGB.xcdatamodeld in Sources */,
 				BAC34C1F26D4758D00353DD6 /* AppDelegate.swift in Sources */,
 				BAC34C2126D4758D00353DD6 /* SceneDelegate.swift in Sources */,
+				BAC34C9126D5CC3E00353DD6 /* TimeCounter.swift in Sources */,
 				BAC34C2326D4758D00353DD6 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
