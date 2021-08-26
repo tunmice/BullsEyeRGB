@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA80672F26D7238000DF7007 /* ColorUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA80672E26D7238000DF7007 /* ColorUISlider.swift */; };
 		BAC34C1F26D4758D00353DD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC34C1E26D4758D00353DD6 /* AppDelegate.swift */; };
 		BAC34C2126D4758D00353DD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC34C2026D4758D00353DD6 /* SceneDelegate.swift */; };
 		BAC34C2326D4758D00353DD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC34C2226D4758D00353DD6 /* ContentView.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA80672E26D7238000DF7007 /* ColorUISlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUISlider.swift; sourceTree = "<group>"; };
 		BAC34C1B26D4758D00353DD6 /* BullsEyeRGB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEyeRGB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC34C1E26D4758D00353DD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAC34C2026D4758D00353DD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				BAC34C1E26D4758D00353DD6 /* AppDelegate.swift */,
 				BAC34C2026D4758D00353DD6 /* SceneDelegate.swift */,
+				BA80672E26D7238000DF7007 /* ColorUISlider.swift */,
 				BAC34C2226D4758D00353DD6 /* ContentView.swift */,
 				BAC34C2726D4759400353DD6 /* Assets.xcassets */,
 				BAC34C2C26D4759400353DD6 /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA80672F26D7238000DF7007 /* ColorUISlider.swift in Sources */,
 				BAC34C2626D4758D00353DD6 /* BullsEyeRGB.xcdatamodeld in Sources */,
 				BAC34C1F26D4758D00353DD6 /* AppDelegate.swift in Sources */,
 				BAC34C2126D4758D00353DD6 /* SceneDelegate.swift in Sources */,

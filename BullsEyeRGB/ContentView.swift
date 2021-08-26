@@ -97,20 +97,17 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct ColorSlider: View {
-    @Binding var value: Double
-//    @Binding var opacity: Double
-    var textColor: Color
-    var body: some View {
+  @Binding var value: Double
+  var textColor: UIColor
+  var body: some View {
+    HStack {
+      Text("0").foregroundColor(Color(textColor))
+      ColorUISlider(color: textColor, value: $value)
         
-        HStack {
-            Text("0")
-                .foregroundColor(textColor)
-            Slider(value: $value)
-                .background(textColor)
-                .opacity(value)
-                .cornerRadius(10)
-            Text("255")
-                .foregroundColor(textColor)
-        }
+
+     
+      Text("255").foregroundColor(Color(textColor))
     }
+    // .padding(.horizontal)
+  }
 }
